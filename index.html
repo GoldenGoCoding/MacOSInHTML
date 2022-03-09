@@ -1,0 +1,280 @@
+﻿`
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="apple_logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Macos Monterey</title>
+</head>
+
+<body>
+
+    <body class="desktop">
+        <style>
+            #mydiv {
+                position: absolute;
+                resize: both;
+                overflow: auto;
+            }
+            
+            #mydivheader {
+                height: 0.75cm;
+                cursor: default;
+            }
+        </style>
+
+        <body>
+            <div id="workspace">
+                <div id="mydiv" class="window SetWindow" style="background: #2228; backdrop-filter: blur(10px);">
+                    <div id="mydivheader">
+                        <div class="col col-3">
+                            <span class="iconify clos" data-icon="ic:outline-close" data-inline="false"></span>
+                            <span class="iconify min" data-icon="bi:dash" data-inline="false"></span>
+                            <span id="max" class="iconify max" data-icon="fluent:arrow-maximize-16-filled" data-inline="false"></span>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+
+            <header class="finderBar">
+                <span id="mac" class="iconify appleico" data-icon="ion-logo-apple" data-inline="false">
+                    <!--
+                    <div class="menu">
+                        <div>About This Mac...</div>  
+                    </div>
+                -->
+                </span>
+                <span class="appName" id="appName">Finder</span>
+                <span class="menuBar">File</span>
+                <span class="menuBar">Edit</span>
+                <span class="menuBar">View</span>
+            </header>
+            <footer class="dock">
+                <img src="icons/Finder.png" alt="Finder" class="icon">
+                <img src="icons/Safari.png" alt="Safari" class="icon">
+                <img src="icons/Google_Chrome 2.png" alt="Chrome" class="icon">
+                <img src="icons/Settings.png" alt="Settings" class="icon Set">
+                <img src="icons/Google_Maps.png" alt="Google Maps" class="icon">
+                <img src="icons/Google_Gmail.png" alt="Gmail" class="icon">
+                <img src="icons/App Store.png" alt="App Store" class="icon">
+                <img src="icons/Minecraft.png" alt="Minecraft" class="icon">
+            </footer>
+
+            <ul class="contextMenus">
+                <li class="Finder">
+                    <div id="FinderMain" class="menu">
+                        <div>
+                            Options...
+                        </div>
+                        <div class="b">
+                            Open With
+                        </div>
+                        <div>
+                            Move To Trash
+                        </div>
+                        <div>
+                            Open With TextEdit <span><img src="icons/Textedit.png" alt="" srcset=""></span>
+                        </div>
+                        <div>
+                            Get Info
+                        </div>
+                        <div>
+                            Rename
+                        </div>
+                        <div>
+                            Compress
+                        </div>
+                        <div>
+                            Duplicate
+                        </div>
+                        <div>
+                            Make Alias
+                        </div>
+                        <div>
+                            Quick Lock
+                        </div>
+                        <div>
+                            Share
+                        </div>
+                        <div>
+                            Copy
+                        </div>
+                        <div>
+                            Clean Up Selection
+                        </div>
+                        <div>
+                            Show View Options
+                        </div>
+                        <div>
+                            Tags...
+                        </div>
+                    </div>
+                </li>
+                <li class="myApp">
+                    <ul>
+                        <div class="menu" id="myAppMain">
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                            <div>
+                                blah
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+            <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="/script.js"></script>
+            <script>
+                dragElement(document.getElementById("mydiv"));
+
+                function dragElement(elmnt) {
+                    var pos1 = 0,
+                        pos2 = 0,
+                        pos3 = 0,
+                        pos4 = 0;
+                    if (document.getElementById(elmnt.id + "header")) {
+                        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                    } else {
+                        elmnt.onmousedown = dragMouseDown;
+                    }
+
+                    function dragMouseDown(e) {
+                        e = e || window.event;
+                        e.preventDefault();
+                        pos3 = e.clientX;
+                        pos4 = e.clientY;
+                        document.onmouseup = closeDragElement;
+                        document.onmousemove = elementDrag;
+                    }
+
+                    function elementDrag(e) {
+                        e = e || window.event;
+                        e.preventDefault();
+                        pos1 = pos3 - e.clientX;
+                        pos2 = pos4 - e.clientY;
+                        pos3 = e.clientX;
+                        pos4 = e.clientY;
+                        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                    }
+
+                    function closeDragElement() {
+                        document.onmouseup = null;
+                        document.onmousemove = null;
+                    }
+                }
+                $.getJSON('MacOS_Monterey_12.1.dmg', function(data) {
+                    $.each(data.items, function() {
+                        console.log(data.items)
+                    })
+                });
+                let Finder = document.querySelector('#FinderMain');
+                let myApp = document.querySelector('#myAppMain');
+                document.querySelector("html").addEventListener('contextmenu', function contextMenu(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    pos1 = e.clientX;
+                    pos2 = e.clientY;
+                    Finder.style.display = "block";
+                    Finder.style.left = pos1 + "px";
+                    Finder.style.top = pos2 + "px";
+                    myApp.style.display = "none";
+                })
+                document.querySelector("#mydiv").addEventListener('contextmenu', function contextMenu(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    pos1 = e.clientX;
+                    pos2 = e.clientY;
+                    myApp.style.display = "block";
+                    myApp.style.left = pos1 + "px";
+                    myApp.style.top = pos2 + "px";
+                    Finder.style.display = "none";
+                })
+                document.querySelector("html").addEventListener('click', function contextMenu(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    document.querySelector('.menu').style.display = "none";
+                })
+                document.querySelector(".window").addEventListener('click', function contextMenu(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    document.querySelector('.menu').style.display = "none";
+                })
+                document.querySelector(".menu").addEventListener('contextmenu', function contextMenu(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    document.querySelector('.menu').style.display = "none";
+                })
+                document.querySelector('html').onclick = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                document.querySelector('#max').onclick = (e) => {
+                    const window = document.querySelector('#mydiv');
+                    const bar = document.querySelector('.finderBar');
+                    const dock = document.querySelector('.dock');
+                    let loop = 2;
+                    while (loop != 1) {
+                        if (window.style.borderRadius == '10px') {
+                            console.log('max');
+                            bar.style.display = 'none';
+                            dock.style.display = 'none';
+                            window.style.borderRadius = 0;
+                            window.style.width = '100%';
+                            window.style.height = '100%';
+                            window.style.top = '0px';
+                            window.style.left = '0px';
+                            loop = 1;
+                        }
+                        if (window.style.borderRadius == 0) {
+                            console.log('min');
+                            bar.style.display = 'block';
+                            dock.style.display = 'block';
+                            window.style.borderRadius = '10px';
+                            window.style.width = '555px';
+                            window.style.height = '336px';
+                            window.style.top = '201px';
+                            window.style.left = '388px';
+                            loop = 1;
+                        }
+                    }
+                }
+            </script>
+        </body>
+    </body>
+
+</html>
